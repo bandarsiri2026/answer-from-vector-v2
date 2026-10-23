@@ -1,0 +1,14 @@
+name: validate-workflow
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check workflow JSON for secrets and broken connections
+        run: python3 scripts/validate_workflows.py

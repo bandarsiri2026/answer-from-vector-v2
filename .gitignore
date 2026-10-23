@@ -1,0 +1,17 @@
+# Never commit secrets or raw exports
+.env
+.env.local
+*.env
+node_modules/
+
+# Raw n8n export contains real resource IDs — only the sanitized file is published
+Answer from vector v2.json
+*raw*.json
+
+# Screenshots may reveal open node panels — only curated docs images are allowed
+Screenshot*
+*.png
+*.jpg
+!docs/workflow-b-answer-from-vector.png
+
+tmp_*.py
